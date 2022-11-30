@@ -1,0 +1,37 @@
+body{
+ margin: 0;
+ padding: 0;   
+ background-color: black;
+ color: white;
+}
+
+.task-wrapper{
+    display: flex;
+    column-gap: 20%;
+}
+
+.task-card{
+    border:1px solid white;
+    padding: 10px;
+    margin: 5%;
+}
+
+.todo-task-card{
+    background-color: rgb(79, 75, 75);
+}
+
+.in-progress-task-card{
+    background-color: royalblue
+}
+
+.done-task-card{
+    background-color: rgb(95, 236, 39)
+}
+
+.task-name{
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+button{
+    cursor: pointer;
+}
