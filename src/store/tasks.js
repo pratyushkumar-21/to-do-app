@@ -36,6 +36,18 @@ const slice = createSlice({
   name: "task",
   initialState,
   reducers: {
+    addTask: (state, action) => {
+      const id = new Date().getTime();
+      const { desc, name } = action.payload;
+
+      state[id] = {
+        id,
+        name,
+        desc,
+        status: TASK_TODO_STATUS,
+      };
+    },
+
     changeTaskStatus: (state, action) => {
       const { id, status } = action.payload;
       state[id].status = status;
@@ -47,6 +59,6 @@ const slice = createSlice({
   },
 });
 
-export const { changeTaskStatus, deleteTask } = slice.actions;
+export const { addTask, changeTaskStatus, deleteTask } = slice.actions;
 
 export default slice.reducer;

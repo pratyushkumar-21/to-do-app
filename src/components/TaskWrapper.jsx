@@ -1,6 +1,8 @@
 import React from "react";
 import TaskContainer from "./TaskContainer";
 import { useSelector } from "react-redux";
+import TaskForm from "./TaskForm";
+
 import {
   TASK_TODO_STATUS,
   TASK_IN_PROGRESS_STATUS,
@@ -31,6 +33,9 @@ const TaskWrapper = () => {
   return (
     <div>
       <h1>Task List</h1>
+      <div>
+        <TaskForm />
+      </div>
       <div className="task-wrapper">
         <div className="todo-task-conatiner">
           <TaskContainer header="Todo" taskList={todoList} />
