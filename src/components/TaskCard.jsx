@@ -19,6 +19,10 @@ const TaskCard = (props) => {
     dispatch(changeTaskStatus({ id: task.id, status: nextStatus }));
   };
 
+  const handleDragStart = (e, task) => {
+    e.dataTransfer.setData("id", task.id);
+  };
+
   const renderButton = (status) => {
     switch (status) {
       case TASK_TODO_STATUS:
@@ -60,8 +64,15 @@ const TaskCard = (props) => {
   };
 
   return (
-    <div className={`${cssClass}-task-card task-card`}>
-      <span className="task-name">{task.name}</span> <span>{task.status}</span>
+    <div
+      className={`${cssClass}-task-card task-card`}
+      draggable="true"
+      onDragStart={(e) => handleDragStart(e, task)}
+    >
+      <span className="task-name">
+        {task.name} - {task.id}
+      </span>{" "}
+      <span>{task.status}</span>
       <p>{task.desc}</p>
       <div>
         <button onClick={handleDelete}>Delete</button>

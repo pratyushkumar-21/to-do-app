@@ -1,19 +1,20 @@
 body{
  margin: 0;
  padding: 0;   
- background-color: black;
+ background-color: rgb(40,40,40);
  color: white;
 }
 
 .task-wrapper{
     display: flex;
-    column-gap: 20%;
+    column-gap: 5%;
 }
 
 .task-card{
     border:1px solid white;
     padding: 10px;
     margin: 5%;
+    cursor:move;
 }
 
 .todo-task-card{
@@ -34,4 +35,10 @@ body{
 }
 button{
     cursor: pointer;
+}
+
+.task-container{
+    background-color: rgba(61, 0, 0, 0.224);
+    min-width: 400px;
+    height: 100vh;
 }
